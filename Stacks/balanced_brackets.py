@@ -13,16 +13,12 @@ def is_balanced(s):
     else:
         stack = Stack()
         counterparts = {'{':'}', '[':']', '(':')'}
-        middle_ix = len(s) // 2
         
         for char in s:
             if char in counterparts:
                 stack.push(char)
-            else:
-                if not stack.is_empty():
-                    popped_char = stack.pop()
-                    if char != counterparts[popped_char]:
-                        return 'NO'
+            elif stack.is_empty() or counterparts[stack.pop()] != char:
+                return 'NO'
                     
         return 'YES' if stack.is_empty() else 'NO'
         

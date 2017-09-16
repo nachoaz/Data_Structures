@@ -1,0 +1,7 @@
+Main idea DFS:
+
+DFS:
+    - answers s-t connectivity
+    - can be used for cycle detection
+    - can be used for topological sorting
+    - can be used for identifying strongly connected components

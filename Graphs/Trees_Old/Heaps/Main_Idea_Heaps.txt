@@ -1,0 +1,61 @@
+HEAPS
+
+The heap data structure is useful not only for implementing heapsort (a sorting algorithm which combines the advantages of insertionsort and mergesort - it sorts in-place, and does so in O(nlogn) time) with a max-heap, but also for implementing an efficient priority queue with a min-heap.
+
+Note: heapsort is a good algorithm, but a good implementation of quicksort usually beats it in practice. Nevertheless, we can still use heaps for many applications, including most notably as an efficient priority queue.
+
+******************
+*   Definition   *
+******************
+A (binary) heap is an array object which we can view as a nearly complete binary tree (recall: complete tree is one in which every level is fully filled except for maybe the bottom-most, which is filled left to right). Each node of the heap corresponds to an element of the array. An array A that represents a heap is an object with two attributes: A.length (which gives us the number of elements in A), and A.heap-size (which tells us how many elements in the heap are stored within the array A). That is, although A[1,...,A.length] may contain numbers, only A[1,...,A.heap-size] (where 1<= A.heap-size <= A.length) are valid elements of the heap.
+
+The root of the heap is A[1] (or A[0] if we're zero-indexed). Given any index i, we know the key that corresponds to that element in the heap (simply k = i), and we can also compute the keys of that element's left child and right child. The left child's key is i*2, the right child's key is i*2 + 1, and the parent's key is floor(i/2).
+
+We organize heaps using the appropriate heap 'property' (or convention). I say appropriate because there's two kinds of a heaps: min-heaps and max-heaps.
+
+For max-heaps, the convention is that A[parent(i)] >= A[i]. That is, in max-heaps, the value of a node is at most the value of its parent. Thus, the maximum value of the array is stored at the root of the tree, and any subtree contains values that are no larger than the value of the node at which that subtree originated.
+
+For min-heaps, the convention is the opposite. That is, A[parent(i)] <= A[i]. So the value of a node is at least the value of its parent. Thus, the minimum value of the array is stored at the root of the tree, and any subtree contains values that are no greater than the value of the node at which that subtree originated.
+
+We can produce a heap from an unsorted array in O(n) time by using the Build_Max_Heap or Build_Min_Heap procedures.
+
+*************************************
+*   Max-Heapify (and Min-Heapify)   *
+*************************************
+To build a heap or insert/delete elements into/from it, we need to maintain the heap 'property'. To maintain the max-heap property, we call the procedure Max-Heapify, which receives as inputs the array A and an index i into the array (any index). When called, Max-Heapify assumes that both the left subtree and the right subtree rooted at Left(i) and Right(i) are max-heaps (abide by the property), but that A[i] might be smaller than its descendants (thus violating the property). To fix this, Max-Heapify lets the value at A[i] "float down" the max-heap.
+
+The running time of Max-Heapify can be described by the recurrence T(n) <= T(2n/3) + O(1), which - by the Master Theorem - simplifies to O(lgn). Alternatively, we can characterize the running time of Max-Heapify on a node of height h as O(h).
+
+Min-Heapify is the opposite of Max-Heapify.
+
+*****************************************************
+*   Building a Max-Heap (and Building a Min-Heap)   *
+*****************************************************
+To build a max-heap, we use the procedure Build-Max-Heap which takes as input an array A and first constructs the heap by adding a node to the heap as an element from A is unloaded (this adding of nodes is done from left to right and from top to bottom). Then, a series of calls are made to the procedure Max-Heapify, starting at node with key floor(A.length/2) and going down to i = 1.
+
+We can derive a tight upper bound on the running time of Build-Max-Heap by observing that the true time cost of Max-Heapify from a node depends on the height of that node on the tree (it costs O(h), where h is the height of the given node). Realize that an n-element heap has height lgn and at most ceil(n/(2^(h+1))) nodes of any height h. Thus we can place an upper bound on the total cost of Build-Max-Heap (which comes out to O(n)). So we can build a max-heap from an unordered array in linear time.
+
+*****************************************
+*   Sorting a Max-Heap (aka Heapsort)   *
+*****************************************
+The sorting procedure takes as input an array A and starts by using Build-Max-Heap to build a max-heap from A. Then we basically exploit this bit of insight: "the maximum element of the array is stored at the root of the heap". What we do is we iteratively switch out the root of the heap with the minimum value of the heap (at the bottom-most right-most node), remove the newly-moved-to-the-bottom-most-right-most node (i.e. the max-value node) from the heap (and put it at the right-most available slot in the array), call Max-Heapify to put things in order again, and repeat.
+
+The running time of Heapsort is O(nlgn) because the initial call to Build-Max-Heap takes O(n) time, and each call to Max-Heapify takes O(lgn) time (and that call is made n - 1 times).
+
+***********************************************************
+*   Implementing a Max-Priority Queue (with a Max-Heap)   *
+***********************************************************
+Note: A min-priority queue can also be implemented using a heap (you just have to use a min-heap).
+A priority queue is a data structure to maintain a set S in which each element has an associated key and a value. It should support the following operations:
+  (1) Insert(S,x): inserts an element x into the set S (equivalent to S = S UNION {x})
+  (2) Heap-Maximum(S): returns the element in S with the largest key
+  (3) Extract-Max(S): removes and returns the element of S with the largest key
+  (4) Increase-Key(S,x,k): increases the value of element x's key to the new value k (note/warning: here, k is assumed to be at least as large as x's current key).
+
+Applications of Priority Queues:
+  (1) To schedule jobs on a shared machine. A max-priority queue keeps track of the jobs to be performed and their respective priorities. When a job is finished (or interrupted), the scheduler selects the next job by calling the Extract-Max procedure. New jobs can be inserted using the Insert procedure.
+  (2) In an event-driven simulator. The items in the queue are events to be simulated, each with an associated time of occurrence that serves as its key. The events must be simulated in order of their time of occurrence, because the simulation of an event can cause other events to be simulated in the future. The simulation program calls Extract-Min at each step to choose the next event to simulate. As new events are produced, the simulator inserts them into the min-priority queue by calling Insert.
+
+Running times of procedures:
+  (1)
+  (2) Heap-Maximum is fed the heap and runs in O(1) time (because all it does is simply return the value of the root of the heap).

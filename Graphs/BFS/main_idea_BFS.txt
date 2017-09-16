@@ -1,0 +1,15 @@
+Main Idea BFS
+
+BFS(s) produces the connected component R(s) of vertex s (that is, the set of nodes reachable from s). Running time of BFS is O(n + m), where n = |V|, m = |E|.
+
+Hence, BFS:
+    - answers s-t connectivity (that is: given a graph G and nodes s and t, is t reachable from s?)
+    - computes shortest s-v paths for every node v reachable from s in UNWEIGHTED graphs (if graph is weighted, have to use Dijkstra's algorithm).
+    - can be used to identify ALL connected components of an undirected graph G
+    - can be used to test bipartiteness (i.e. testing 2-colorability)
+
+How to test for bipartiteness:
+(1) Start BFS from any vertex; color it red
+(2) Color white all nodes in the first layer L1 of the BFS tree. If there's an edge between two nodes in L1, output no and stop.
+(3) Otherwise, continue from layer L1, coloring red the vertices in even layers and white in odd layers.
+(4) If BFS terminates and all nodes in V have been explored (hence 2-colored), output yes.

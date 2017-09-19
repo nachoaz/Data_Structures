@@ -14,7 +14,7 @@ since resizing is infrequent.
 
 Time Complexity of Operations
 -----------------------------
-### `access`
+### Access
 Retreiving and updating `arr[i]` takes O(1) time (because you know _exactly_
 where in memory what you want to update or retrieve lives).
 

@@ -1,5 +1,8 @@
 Data Structures
 ===============
+
+Purpose
+-------
 The purpose of this repo is to house exercises that I've done to get practice
 with different data structures.
 

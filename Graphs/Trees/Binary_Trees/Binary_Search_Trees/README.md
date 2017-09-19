@@ -2,13 +2,13 @@
 ##  Description
 Typically, we use a Binary Search Tree when we have a list (or collection)
 of numbers, and ned to be able to do all (or most) of these things:
-  (1) check if a number is in the list (search)
-  (2) insert a new number into the list
-  (3) delete a number from the list
-  (4) get the smallest number from that list
-  (5) get the largest number from that list
-  (6) get the successor of a number within that list
-  (7) get the predecessor of a number within that list
+  1. check if a number is in the list search.
+  2. insert a new number into the list
+  3. delete a number from the list
+  4. get the smallest number from that list
+  5. get the largest number from that list
+  6. get the successor of a number within that list
+  7. get the predecessor of a number within that list
 
 Some terminology: given y, x is the predecessor of y if it's the number to
 the left of x in the sorted list (where list was sorted in nondecreasing
@@ -30,12 +30,40 @@ collection) of numbers, can't I use a BST to sort that list in O(n) time?
 Answer: No. It costs to do O(n) to do the inorder-tree-walk, yes. But it'll
 also have cost O(n) to build the BST in the first place.
 
-## Methods
-The methods of an object of type BinarySearchTree (as defined by my class) are:
-is_empty(), find_element(value), get_min(), get_max(), predecessor(value), successor(value), insert(value), delete(value), values()
 
 ## Time Complexity of Operations
-NOTE: h is height of the tree. h can be at best floor(log(n)) (or simply logn) (if tree perfectly blanced), or at worst O(n) (if not balanced)
+NOTE: h is height of the tree. h can be at best floor(log(n)) (or simply logn)
+(which occurs if tree perfectly blanced), or at worst n (if perfectly
+imbalanced).
+
+  1. access: (same as search)
+  2. search: O(h) because sought-after-node is found by following simple path to
+     sought-after-node (which may or may not be at the deepest level of the
+     BST).
+  3. insert: O(h) because to insert a node X, we follow a simple path, asking:
+     should X be in the right subtree here or in the left subtree? Since the
+     path is a simple path, its length is at most h.
+  4. delete: O(h) because to delete a node Z, we have three cases:
+    1. if Z has no children, simply remove Z
+    2. if Z has one child, remove Z and elevate that child to take Z's position
+    3. if Z has two children, find Z's successor Y --which will be in Z's right
+       subtree-- and have Y take Z's position
+  5. min: O(h) because min is found by following a simple path from root to
+     leftmost node
+  6. max: O(h) because max is found by following a simple path from root to
+     rightmost node.
+  7. predecessor(`x`): O(h) because predecessor is found by either:
+    1. following a simple path _up_ from `x` or
+    2. following a simple path _down_ from `x`
+     If the left subtree of `x` is nonempty, then the successor of
+     `x` is just the rightmost node in `x`'s left subtree.
+     If the left subtree of `x` is empty and `x` has a predecessor `y`, then `y`
+     is the lowest ancestor  of `x` whose right child is also an ancestor of `x`
+  8. successor(`x`): O(h) because successor found through similar process as
+     predecessor.
+     If the right subtree of `x` is nonempty, then the successor of `x` is just
+     the leftmost node in x's right subtree.
+     If the right subtree of `
 
 access: (same as search)
 search: O(h) because sought-after-node found by following simple path to sought-after-node (which may or may not be at deepest level)

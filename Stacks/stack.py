@@ -32,4 +32,4 @@ class Stack(object):
         return self.top.data if self.top is not None else None
 
     def is_empty(self):
-        return self.peek() is None
+        return self.top is None

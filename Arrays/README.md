@@ -12,6 +12,10 @@ entries from the original array. What this implies is that the worst-case time
 cost of insertion is big but the average time cost for insertion is constant
 since resizing is infrequent.
 
+Some languages --such as Python and Java-- provide a Dynamic Array object
+(`list` and `ArrayList`, respectively) that takes care of dynamically resizing
+the underlying array. (Think of it as a wrapper.)
+
 Time Complexity of Operations
 -----------------------------
 ### Access
@@ -20,7 +24,7 @@ where in memory what you want to update or retrieve lives).
 
 ### Append
 Assuming that _knowing_ (or _getting_) the next available address takes O(1),
-then inserting a value into an array that isn't full takes constant time: simply
+inserting a value into an array that isn't full takes constant time: simply
 write it into the next available adress. When the array is full, though, we have
 to resize it to make room for the value-to-insert (allocate a new array a
 constant factor --say two-- times the size of the original array, copy

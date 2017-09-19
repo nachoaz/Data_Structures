@@ -18,7 +18,7 @@ Time Complexity of Operations
 Retreiving and updating `arr[i]` takes O(1) time (because you know _exactly_
 where in memory what you want to update or retrieve lives).
 
-### `append` (or `insert_at_end`)
+### Append
 Assuming that _knowing_ (or _getting_) the next available address takes O(1),
 then inserting a value into an array that isn't full takes constant time: simply
 write it into the next available adress. When the array is full, though, we have
@@ -35,7 +35,7 @@ simplicity, let's assume that whenever we resize we double).  The former is
 O(_m_) because each insert costs O(1) and there's _m_ of them. How much do the
 doubling operations cost?
 
-### `prepend` (or `insert_at_start`)
+### Prepend
 Inserting a value into the start of an array that isn't full takes O(m) time
 (where m is the number of addresses in the array that have been used). This is
 because to insert at the start, you have to move everything over one spot to the
@@ -44,8 +44,13 @@ leftmost address. Note that if the array is full, we must re-allocate to a new
 array (although --by a similar argument as for re-allocation due to
 `insert_at_end` this will still take O(m) time).
 
-### `delete_at_i`
+### Delete at _i_ 
 Deleting an element at index _i_ from an array of length _n_ is O(_n - i_).
 
-### `insert_at_i`
+### Insert at _i_
 Inserting an element at index _i_ in an array of length _n_ is O(_n - i_).
+
+Tips for Solving Problems
+-------------------------
+* Take advantage of the fact that you can operate efficiently on both ends of an
+  array.

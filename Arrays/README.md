@@ -37,7 +37,7 @@ doing that? Well, it's the cost of carrying out the actual inserts plus the cost
 of carrying out any resizing operations that we might need to do. (For
 simplicity, let's assume that whenever we resize we double).  The former is
 O(_m_) because each insert costs O(1) and there's _m_ of them. How much do the
-doubling operations cost?
+doubling operations cost? #TODO: finish writing this explanation.
 
 ### Prepend
 Inserting a value into the start of an array that isn't full takes O(m) time

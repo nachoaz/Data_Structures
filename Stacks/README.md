@@ -13,7 +13,7 @@ You can implement a stack using either an array, a dynamically-rezisable array,
 or a linked-list 'under the hood'. Which should you use? Recall that dynamic
 arrays have fast lookups and fast (on average) appends, but slow prepends (and
 that their size must not be established ahead of time). Arrays also have fast
-lookpus and fast (always, as long as there's memory space available) prepends,
+lookpus and fast (always, as long as there's memory space available) appends,
 but have slow prepends and their size *must* be established ahead of time.
 Linked-lists have fast prepends and appends (assuming you're using a linked-list
 with both a `head` and a `tail` pointer), but slow lookups. So if you know an

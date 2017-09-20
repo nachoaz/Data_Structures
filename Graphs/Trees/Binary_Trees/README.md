@@ -48,4 +48,5 @@ you're going to implement these recursively, be aware of the space requirements
 implied by the call stack. See a visualization of each below.
 
 In-order Traversal: A, B, C, D, E, F, G, H, I
-<img src="./images/inorder_traversal" width="48">
+![inorder_traversal](./images/inorder_traversal.svg)
+<img src="./images/inorder_traversal.svg" width="48">

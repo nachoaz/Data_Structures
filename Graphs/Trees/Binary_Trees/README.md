@@ -11,3 +11,9 @@ all nodes have a parent.
 Some Terminology
 ----------------
 TODO
+
+
+Traversals
+----------
+TODO
+

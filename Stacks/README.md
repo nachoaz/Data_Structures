@@ -37,20 +37,15 @@ would.)
 
 Time Complexity of Operations
 -----------------------------
+These costs are assuming that we're using a linked-list 'under the hood', and
+that this linked-list has a `tail` pointer.
+
 ### Append (_Push_)
-Regardless of whether you're using an array, dynamically-resizable array, or
-linked list 'under the hood', an append will cost O(1) time and O(1) space.
-Note, however, that if you're using an array 'under the hood' to implement your
-stack, then you run the risk of having a _stack overflow_ occur (that is, it
-might happen that the array you're using to represent your stack gets full --
-whenever you try to push one more thing onto it it'll 'overflow').
+This takes O(1) time and O(1) space.
 
 ### Extract Right (_Pop_)
-The time cost of this operation is O(1) regardless of what data structure you're
-using 'under the hood' to implement your stack (assuming that if you're using a
-linked-list, that linked-list has a `tail` pointer).
+This takes O(1) time and O(1) space.
 
 ### Peek
 This returns whatever is at the top of the stack, without actually popping it
-from the stack. Its time cost is O(1) regardelss of what data structure your
-stack is using 'under the hood'.
+from the stack. Its time cost is O(1).

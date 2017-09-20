@@ -19,13 +19,14 @@ would.)
 
 Time Complexity of Operations
 -----------------------------
+These are assuming we're using a linked-list 'under the hood', and that this
+linked-list has both a `head` and a `tail` pointer.
+
 ### Append (_Push_)
-This takes O(1) time and O(1) space, assuming that the linked-list has a `tail`
-pointer.
+This takes O(1) time and O(1) space.
 
 ### Extract Left (_Pop_)
-The time cost of this operation is O(1) if you're using a linked-list with a
-`tail` pointer to implement your queue.
+This takes O(1) time and O(1) space.
 
 ### Peek
 This returns whatever is at the top of the queue, without actually popping it

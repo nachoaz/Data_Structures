@@ -37,15 +37,9 @@ would.)
 
 Time Complexity of Operations
 -----------------------------
-These costs are assuming that we're using a linked-list 'under the hood', and
-that this linked-list has a `tail` pointer.
-
-### Append (_Push_)
-This takes O(1) time and O(1) space.
-
-### Extract Right (_Pop_)
-This takes O(1) time and O(1) space.
-
-### Peek
-This returns whatever is at the top of the stack, without actually popping it
-from the stack. Its time cost is O(1).
+When the stack is implemented using a linked list the push, pop, and peek
+operations have O(1) time cost. If the stack is implemented using an array,
+then there's an upper bound on the number of items it can hold (and if you push
+one too many you'll get a _stack overflow_), but push, pop, and peek are still
+constant time. If you use a dynamically-resizable array instead, the average
+time for these operations is O(1), but that's _on average_.

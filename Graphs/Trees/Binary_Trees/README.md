@@ -47,5 +47,5 @@ Note that these traversals can be defined recursively. (Remember, though, if
 you're going to implement these recursively, be aware of the space requirements
 implied by the call stack. See a visualization of each below.
 
+<img src="./images/inorder_traversal.svg" width="300">
 In-order Traversal: A, B, C, D, E, F, G, H, I
-<img src="./images/inorder_traversal.svg" width="200">

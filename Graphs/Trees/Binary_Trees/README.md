@@ -51,8 +51,14 @@ implied by the call stack. See a visualization of each below.
 In-order Traversal: A, B, C, D, E, F, G, H, I.
 
 
+
+
+
 <img src="./images/preorder_traversal.svg" width="300">
 Pre-order Traversal: F, B, A, D, C, E, G, I, H.
+
+
+
 
 
 <img src="./images/postorder_traversal.svg" width="300">

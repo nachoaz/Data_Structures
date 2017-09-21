@@ -6,6 +6,11 @@ Purpose
 The purpose of this repo is to house exercises that I've done to get practice
 with different data structures.
 
+Know the meaning of asymtotic tight bounds, and keep in mind the relationship
+between costs. To help with this, use this image provided by
+[bigocheatsheet.com](http://bigocheatsheet.com/):
+<img src="/images/big_o_viz.png" width=200>
+
 
 Main Idea Data Structures
 -------------------------
@@ -20,7 +25,7 @@ demands).
 Summary Data Structures
 -----------------------
 Here's a summary that I've adapted from the excellent summary provided by
-[interviewcake](https://www.interviewcake.com/article/python/data-structures-coding-interview).
+[interviewcake](https://goo.gl/DHbaPJ).
 
 Arrays have fast lookups but slow inserts and deletions (unless they're
 `appends` and `extract_right`s); in addition to this, an unattractive thing
@@ -54,11 +59,16 @@ of hash tables is the fact that you run the risk of a 'collision' (i.e. that two
 keys map to the same value); in practice, however, this is rare and so we can
 wave our hands and say that the aforementioned operations take constant time.
 
-Tips on Data Structures
------------------------
-  * It's all about knowing what's important in the problem you're working on.
-    What does your data structure need to do quickly? What can you afford for it
-    to do slowly? Think about which operations you'll perform frequently, and
-    which operations you won't do at all.
-  * Know what each data structure has to offer, and know what it is that your
-    problem needs.
+Tips on Shopping for Data Structures
+------------------------------------
+It's all about knowing what's important in the problem you're working on.  What
+does your data structure need to do quickly? What can you afford for it to do
+slowly? Think about which operations you'll perform frequently, and which
+operations you won't do at all. Know what each data structure has to offer, and
+know what it is that your problem needs.
+
+
+Main Idea Algorithms
+--------------------
+The main idea behind the subject of algorithms is that ["there's more than one
+way to peel an orange."](https://goo.gl/jRLxCp)

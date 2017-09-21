@@ -58,6 +58,7 @@ Tips on Data Structures
 -----------------------
   * It's all about knowing what's important in the problem you're working on.
     What does your data structure need to do quickly? What can you afford for it
-    to do slowly?
+    to do slowly? Think about which operations you'll perform frequently, and
+    which operations you won't do at all.
   * Know what each data structure has to offer, and know what it is that your
     problem needs.

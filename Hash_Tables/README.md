@@ -9,7 +9,9 @@ constant-time inserts and deletions. (Recall that a selling point of arrays is
 that they have constant-time lookups, but that their major drawbacks are
 expensive inserts --unless they're `append`s-- and expensive deletions --unless
 they're `extract_right`s; another thing that's unattractive about arrays is that
-their size must be specified ahead of time.)
+their size must be specified ahead of time.) Apart from offering fast lookups,
+inserts, and deletions, a hash table also offers fast search (i.e. answering the
+question "is `such_and_such` value in the collection of items?").
 
 It turns out that quick lookups are often very important (i.e. that we end up
 needing quick lookups in a lot of applications).

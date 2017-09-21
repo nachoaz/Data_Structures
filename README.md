@@ -9,6 +9,7 @@ with different data structures.
 Know the meaning of asymtotic tight bounds, and keep in mind the relationship
 between costs. To help with this, use this image provided by
 [bigocheatsheet.com](http://bigocheatsheet.com/):
+
 <img src="/images/big_o_viz.png" width=500>
 
 

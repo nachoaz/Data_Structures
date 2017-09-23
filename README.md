@@ -6,11 +6,11 @@ Purpose
 The purpose of this repo is to house exercises that I've done to get practice
 with different data structures.
 
-Know the meaning of asymtotic tight bounds, and keep in mind the relationship
+Know the meaning of asymtotic bounds, and keep in mind the relationship
 between costs. To help with this, use this image provided by
 [bigocheatsheet.com](http://bigocheatsheet.com/):
 
-<img src="/images/big_o_viz.png" width=500>
+<img src="/images/big_o_viz.png" width=850>
 
 
 Main Idea Data Structures

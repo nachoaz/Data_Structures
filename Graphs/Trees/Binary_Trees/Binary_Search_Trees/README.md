@@ -4,9 +4,9 @@ Binary Search Trees
 Description
 -----------
 A 'Binary Search Tree' is a binary tree that adheres to the following principle
-(or convention): Let x be node in a binary search tree. If y is a node in the
-left subtree of x, then y.key <= x.key If z is a node to the right subtree of
-x, then z.key >= x.key.
+(or convention): Let _x_ be node in a binary search tree. If _y_ is a node in
+the left subtree of _x_, then _y_.key <= _x_.key If _z_ is a node to the right
+subtree of _x_, then _z_.key >= _x_.key.
 
 Binary search trees are good 'all terrain' data struture; they support the basic
 operations (search, insertion, deletion) and have a few added attractive
@@ -24,9 +24,10 @@ guarantees 'good' (O(logn)) performance on the basic operations.
 
 Applications
 ------------
-A typical application of BSTs is searching (they allow for 'fast' searches,
-unlike arrays and linked-lists). A hash table also supports 'fast'(er) searches,
-but a BST goes further and offers the ability to find the min and max elements,
-and to find the next largest/next smallest element. Both BSTs and hash tables
-use O(n) space for storage (in practice BSTs use slightly more storage than hash
-tables do, although it's still linear relative to the input).
+A typical application of BSTs is searching (they allow
+for 'fast' searches, unlike arrays and linked-lists). A hash table also supports
+'fast'(er) searches, but a BST goes further and offers the ability to find the
+min and max elements, and to find the next largest/next smallest element. Both
+BSTs and hash tables use O(n) space for storage (in practice BSTs use slightly
+more storage than hash tables do, although it's still linear relative to the
+input).
